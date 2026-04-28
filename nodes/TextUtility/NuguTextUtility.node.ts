@@ -5,7 +5,23 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 } from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+
+const NodeConnectionTypes = {
+	Main: 'main',
+} as const;
+
+class NodeOperationError extends Error {
+	constructor(_node: unknown, error: Error | string, options?: { itemIndex?: number }) {
+		super(error instanceof Error ? error.message : error);
+		this.name = 'NodeOperationError';
+		if (error instanceof Error && error.stack) {
+			this.stack = error.stack;
+		}
+		if (options?.itemIndex !== undefined) {
+			this.message = `${this.message} [item ${options.itemIndex}]`;
+		}
+	}
+}
 
 const textOperations: INodeProperties[] = [
 	{

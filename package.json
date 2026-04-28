@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-nugu",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Reusable in-house utility nodes for n8n workflows.",
 	"license": "MIT",
 	"homepage": "https://github.com/nuguseyo-bird/nugu-n8n-nodes#readme",
@@ -51,5 +51,10 @@
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
+	},
+	"peerDependenciesMeta": {
+		"n8n-workflow": {
+			"optional": true
+		}
 	}
 }
