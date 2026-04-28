@@ -215,7 +215,7 @@ function findJsonCandidate(this: IExecuteFunctions, text: string, itemIndex: num
 	return trimmed.slice(start, end + 1);
 }
 
-export class TextUtility implements INodeType {
+export class NuguTextUtility implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Nugu Text Utility',
 		name: 'nuguTextUtility',
